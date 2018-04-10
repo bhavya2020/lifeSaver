@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LifeSaver</string>
+    <string name="water">How much water you drank?</string>
+    <string name="count">Water drank till now:</string>
+    <string name="action_compare">Compare</string>
+    <string name="notification_title">Drink!!!!</string>
+    <string name="notification_body">Drank water or not????</string>
+</resources>

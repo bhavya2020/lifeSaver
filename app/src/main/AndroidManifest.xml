@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.bhavy.lifesaver">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/launcher_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/launcher_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".compareActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+
+        </activity>
+        <service
+            android:name=".sync.WaterReminderIntentService"
+            android:exported="false"/>
+        <service
+        android:name=".sync.waterReminderJob"
+        android:exported="false">
+        <intent-filter>
+            <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE"/>
+        </intent-filter>
+    </service>
+        <service
+            android:name=".sync.resetJob"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE"/>
+            </intent-filter>
+        </service>
+        <receiver android:name=".sync.AlarmReceiver"></receiver>
+
+
+    </application>
+
+
+</manifest>
